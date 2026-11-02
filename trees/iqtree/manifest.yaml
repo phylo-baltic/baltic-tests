@@ -1,0 +1,8 @@
+# IQ-TREE .treefile output (plain Newick, support values as node labels).
+# Field reference: see README.md ("Adding a tree file").
+
+- file: PB1-wmv6-93.treefile.gz
+  description: Wuhan mosquito virus 6 PB1 maximum likelihood tree, 93 tips, dates in tip names.
+  source: baltic-examples/WuMV-6
+  loader: newick
+  kwargs: {treeType: divergence, absoluteTime: true}

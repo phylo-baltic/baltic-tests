@@ -1,0 +1,14 @@
+# Nextstrain / augur Auspice v2 JSON exports, read with load_JSON.
+# Field reference: see README.md ("Adding a tree file").
+
+- file: nipah_all.json.gz
+  description: Nipah virus Auspice JSON, 109 tips.
+  source: baltic-examples/nextstrain
+  loader: json
+  kwargs: {treeType: divergence, stats: false}
+
+- file: measles_genome.json.gz
+  description: Measles virus full-genome Auspice JSON, loaded as a time tree.
+  source: baltic-examples/nextstrain (nextstrain.org/measles/genome; data from GenBank and Pathoplexus)
+  loader: json
+  kwargs: {treeType: time, stats: false}

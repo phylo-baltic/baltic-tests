@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# AI agent change log (kept locally)
+CLAUDE_LOG.md

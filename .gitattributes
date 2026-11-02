@@ -1,0 +1,2 @@
+# Tree files are stored gzip-compressed; never diff or normalise them as text.
+*.gz binary

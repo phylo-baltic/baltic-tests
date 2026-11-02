@@ -1,0 +1,21 @@
+# BEAST v1.x maximum clade credibility trees (TreeAnnotator output).
+# Field reference: see README.md ("Adding a tree file").
+
+- file: miniFluB.mcc.tree.gz
+  description: Influenza B MCC tree, 50 tips, many traits per branch.
+  source: baltic tests/data/miniFluB.mcc.tree
+  loader: nexus
+  kwargs: {treeType: time, tipRegex: '_([0-9-]+)'}
+
+- file: Makona_1610_cds_ig.GLM.MCC.tree.gz
+  description: Ebola virus Makona GLM phylogeography MCC tree, 1,610 tips, 242 trait names.
+  source: baltic-examples/Ebola (Dudas et al. 2017, Nature)
+  loader: nexus
+  kwargs: {treeType: time}
+  slow: true
+
+- file: latest_country_mcc.tre.gz
+  description: SARS-CoV-2 travel-aware discrete phylogeography MCC tree; _ancestor_taxon tips are removed on load, leaving a multitype tree.
+  source: baltic-examples/SARS-CoV-2 (published with Dudas et al. 2021, Nat Commun, doi:10.1038/s41467-021-26055-8)
+  loader: nexus
+  kwargs: {treeType: time, tipRegex: '\|([0-9\-]+)(\_[a-z_]+)*$'}

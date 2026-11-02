@@ -1,0 +1,14 @@
+# BEAST 2 maximum clade credibility trees and networks.
+# Field reference: see README.md ("Adding a tree file").
+
+- file: MERS.mcc.tree.gz
+  description: MERS-CoV structured coalescent MCC tree, 274 tips.
+  source: baltic-examples/MERS-CoV
+  loader: nexus
+  kwargs: {treeType: time}
+
+- file: genome.network.combined.mcc.tree.gz
+  description: Wuhan mosquito virus 6 reassortment network (CoalRe) summary, 18 reticulations, empty set annotations (segments={}).
+  source: baltic-examples/WuMV-6
+  loader: nexus
+  kwargs: {treeType: time}

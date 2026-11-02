@@ -1,0 +1,14 @@
+# TreeTime output (nexus with [&mutations=...] style annotations), read with load_newick.
+# Field reference: see README.md ("Adding a tree file").
+
+- file: divergence_tree.nexus.gz
+  description: Zika virus divergence tree from TreeTime, 283 tips.
+  source: baltic tests/data/2020-04-13_treetime
+  loader: newick
+  kwargs: {treeType: divergence}
+
+- file: timetree.nexus.gz
+  description: Zika virus time tree from TreeTime, 283 tips.
+  source: baltic tests/data/2020-04-13_treetime
+  loader: newick
+  kwargs: {treeType: time}
