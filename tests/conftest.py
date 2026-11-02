@@ -32,18 +32,29 @@ def tree_cache():
 
 
 @pytest.fixture
-def tree(tree_case, tree_cache):
-    """The loaded tree for ``tree_case``, parsed once per session.
+def load_tree(tree_cache):
+    """Return a function that loads a manifest entry by id, e.g. ``"beast1/miniFluB.mcc.tree.gz"``.
 
-    Tests share the cached object, so they must not modify it. A file that fails
-    to load is not re-parsed for every test that uses it.
+    Trees are parsed once per session and shared between tests, so tests must not
+    modify them. A file that fails to load is not re-parsed for every test.
     """
-    if tree_case.id not in tree_cache:
-        try:
-            tree_cache[tree_case.id] = load(tree_case)
-        except Exception as error:
-            tree_cache[tree_case.id] = error
-    cached = tree_cache[tree_case.id]
-    if isinstance(cached, Exception):
-        raise cached
-    return cached
+    cases = {case.id: case for case in TREE_CASES}
+
+    def _load(case_id):
+        if case_id not in tree_cache:
+            try:
+                tree_cache[case_id] = load(cases[case_id])
+            except Exception as error:
+                tree_cache[case_id] = error
+        cached = tree_cache[case_id]
+        if isinstance(cached, Exception):
+            raise cached
+        return cached
+
+    return _load
+
+
+@pytest.fixture
+def tree(tree_case, load_tree):
+    """The loaded tree for ``tree_case`` (shared; see ``load_tree``)."""
+    return load_tree(tree_case.id)

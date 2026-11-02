@@ -12,6 +12,7 @@ tests/                     pytest tests
   conftest.py              parametrises tests over every tree file; caches parsed trees
   treefiles.py             manifest reading, loading and summarising helpers
   test_tree_files.py       checks run on every tree file
+  test_tree_details.py     hand-checked details of specific files (moved from baltic)
 trees/<program>/           one directory per program that produced the files
   *.gz                     gzip-compressed tree files
   manifest.yaml            hand-written: how to load each file, and where it came from

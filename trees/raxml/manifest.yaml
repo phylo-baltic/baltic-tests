@@ -1,0 +1,9 @@
+# Maximum likelihood trees that look like RAxML output (20-decimal branch lengths,
+# integer bootstrap support as node labels, unrooted basal trifurcation).
+# Field reference: see README.md ("Adding a tree file").
+
+- file: zika.nwk.gz
+  description: Zika virus ML tree, 283 tips, bootstrap support as node labels, dates in tip names. Producing program not recorded; formatting matches RAxML.
+  source: baltic tests/data/zika.nwk (Grubaugh et al. 2019, Cell; also in baltic-examples/Zika-virus)
+  loader: newick
+  kwargs: {treeType: divergence}
